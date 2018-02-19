@@ -58,14 +58,14 @@ main {
 .x-coordinate {
   position: absolute;
   top: 0rem;
-  left: 16rem;
+  left: 17rem;
   font-family: 'Kalam', cursive;
   font-size: 1.9rem; }
 
 .y-coordinate {
   position: absolute;
   left: 1rem;
-  top: 16rem;
+  top: 18rem;
   font-family: 'Kalam', cursive;
   font-size: 1.9rem; }
 
