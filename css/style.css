@@ -1,0 +1,110 @@
+/* * {
+    border: 1px solid red;
+} */
+html,
+body {
+  font-size: 62.7%;
+  font-family: sans-serif; }
+
+h1 {
+  font-weight: lighter;
+  letter-spacing: 4px;
+  font-size: 5rem; }
+
+#translate,
+#scale,
+#rotate,
+#skew,
+#matrix,
+#mult,
+#orig {
+  border: none;
+  border-radius: none;
+  border-bottom: 1px solid blue; }
+
+#translate:focus,
+#scale:focus,
+#rotate:focus,
+#skew:focus,
+#matrix:focus,
+#mult:focus,
+#orig:focus {
+  border-bottom: 1px solid rgba(163, 8, 8, 0.863); }
+
+.reset {
+  cursor: pointer; }
+
+main {
+  width: 20rem;
+  height: 20rem;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  position: relative; }
+
+.rarrow {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: -1.1rem;
+  left: 18.6rem; }
+
+.downarrow {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  left: -1.1rem;
+  top: 18.6rem; }
+
+.x-coordinate {
+  position: absolute;
+  top: 0rem;
+  left: 16rem;
+  font-family: 'Kalam', cursive;
+  font-size: 1.9rem; }
+
+.y-coordinate {
+  position: absolute;
+  left: 1rem;
+  top: 16rem;
+  font-family: 'Kalam', cursive;
+  font-size: 1.9rem; }
+
+.movedBox {
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.8;
+  font-family: 'Kalam', cursive; }
+
+.middle {
+  background-image: url("../notebook-page.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.result {
+  font-family: 'Kalam', cursive;
+  font-size: 1.6rem;
+  font-weight: bold;
+  transform: translateY(-60px);
+  animation: result 3s linear 2; }
+
+@keyframes result {
+  0% {
+    /*         transform: scale(1.1); */
+    color: black;
+    font-size: 1.6rem; }
+  25% {
+    /*         transform: scale(1.2); */
+    color: black;
+    font-size: 1.6rem; }
+  50% {
+    /*         transform: scale(1.2); */
+    color: red;
+    font-size: 2.5rem; }
+  75% {
+    /*         transform: scale(1.2); */
+    color: red;
+    font-size: 3rem; }
+  100% {
+    /*         transform: scale(1.); */
+    color: black;
+    font-size: 2rem; } }
