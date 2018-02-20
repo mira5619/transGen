@@ -7,7 +7,9 @@ window.onload = init;
 
 function init() {
 
-    var result = document.querySelector(".result");
+    var resultOrig = document.querySelector(".resultOrig");
+    var resultTransf = document.querySelector(".resultTransf");
+
     var movedBox = document.querySelector(".movedBox");
 
     var resetBtn = document.querySelector(".reset");
@@ -26,18 +28,17 @@ function init() {
             var name = event.target["id"];
             var val = event.target.value;
 
-            if(name == 'mult'){
-                movedBox.style.transform = val;
-                result.innerHTML = "transform: " + val + ";";
-            } else if(name == "orig"){
-                movedBox.style.transform = "rotate(45deg)";
+            
+            if(name == "orig"){
                 movedBox.style.transformOrigin = val;
-               
-                result.innerHTML = "transform: " + val + ";";
-                result.innerHTML = "transform: rotate(45deg); transform-origin: " + val + ";";
+                resultOrig.innerHTML =  "transform-origin: " + val + ";";
+
+            } else if (name == 'mult') {
+                movedBox.style.transform = val;
+                resultTransf.innerHTML = "transform: " + val + ";";
 
             } else {
-                result.innerHTML = "transform: " + name + "(" + val + ");";
+                resultTransf.innerHTML = "transform: " + name + "(" + val + ");";
                 movedBox.style.transform = name + "(" + val + ")"; 
             }  
         });

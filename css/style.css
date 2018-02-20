@@ -80,7 +80,8 @@ main {
   background-size: 100%;
   background-repeat: no-repeat; }
 
-.result {
+.resultOrig,
+.resultTransf {
   font-family: 'Kalam', cursive;
   font-size: 1.6rem;
   font-weight: bold;

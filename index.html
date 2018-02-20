@@ -21,63 +21,69 @@
 
             <div class="col-md-4 my-3">
             <div class="border border-primary p-5 m">
+
+                <h5 class="font-weight-bold">Set <code>transform-origin:</code></h5>
+
+                <div class="form-group row">
+                    <label for="orig" class="col-sm-3 col-form-label"><code>transform-origin:</code> </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="orig" placeholder="top left">
+                        <small id="" class="form-text text-muted">By default it is at the center of the element.</small>
+                    </div>
+                </div>
+                <hr class="bg-secondary">
+
+
+
                 <!-- <div class="row mb-3"> -->
-                    <h5 class="font-weight-bold">Transform functions:</h5>
+                    <h5 class="font-weight-bold">Set <code>transform</code> function:</h5>
 
                 <!-- </div> -->
                 <div class="form-group row">
-                    <label for="translate" class="col-sm-3 col-form-label">translate:</label>
+                    <label for="translate" class="col-sm-3 col-form-label"><code>translate:</code></label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="translate" placeholder="45px, 120px">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="scale" class="col-sm-3 col-form-label">scale: </label>
+                    <label for="scale" class="col-sm-3 col-form-label"><code>scale:</code> </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="scale" placeholder="1.2">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="rotate" class="col-sm-3 col-form-label">rotate: </label>
+                    <label for="rotate" class="col-sm-3 col-form-label"><code>rotate:</code> </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="rotate" placeholder="45deg">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="skew" class="col-sm-3 col-form-label">skew: </label>
+                    <label for="skew" class="col-sm-3 col-form-label"><code>skew:</code> </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="skew" placeholder="20deg">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="matrix" class="col-sm-3 col-form-label">matrix: </label>
+                    <label for="matrix" class="col-sm-3 col-form-label"><code>matrix:</code> </label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" id="matrix" placeholder="1, 2, -1, 1, 80, 80">
                     </div>
                 </div>
-                <hr class="bg-primary">
-                <h5 class="font-weight-bold">Composite transforms</h5>
+                <hr class="bg-secondary">
+                <h5 class="font-weight-bold">Set composite transforms</h5>
 
                 <div class="form-group row">
-                    <label for="mult" class="col-sm-3 col-form-label">transform: </label>
+                    <label for="mult" class="col-sm-3 col-form-label"><code>transform:</code> </label>
                     <div class="col-sm-9">
                        <input type="text" class="form-control" id="mult" placeholder="translate(30px, 20px) rotate(20deg)">
                     </div>
                 </div>
 
-                <hr class="bg-primary">
-                <h5 class="font-weight-bold">Transform origin example with transform: rotate()</h5>
-
-                <div class="form-group row">
-                    <label for="orig" class="col-sm-3 col-form-label">transform-origin: </label>
-                    <div class="col-sm-9">
-                   <input type="text" class="form-control" id="orig" placeholder="top left">
-                    </div>
-                </div>
+                
 
 
             </div>
@@ -91,13 +97,12 @@
                     <p class="x-coordinate text-dark">+x</p>
                     <p class="y-coordinate text-dark">+y</p>
                     <div class="movedBox text-white bg-primary text-center pt-5">transform me
-
                     </div>
-
                 </main>
-               <div class="result lead text-center text-dark">
-               <!-- <code></code> -->
+               <div class="resultOrig lead text-center text-dark">
                </div>
+                <div class="resultTransf lead text-center text-dark">
+                </div>
             </div>
 
             <!-- ---------------cheatsheat--------------- -->
@@ -105,9 +110,56 @@
             <div class="col-md-4 instructions my-3">
                 <div id="accordion" class="border border-primary">
                     <div class="card">
+                        <div class="card-header" id="headingSix">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+                                    aria-controls="collapseSix">
+                                    Transform-origin syntax
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                            <div class="card-body">
+                                <p>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="_blank">source MDN</a>
+                                </p>
+                                <p>Specifies the position of the origin. By default it is at the center of the element and can be moved. It is used
+                                    by several transforms, like rotations, scaling or skewing, that need a specific point as a parameter.</p>
+                                <p>The transform-origin property may be specified using one, two, or three values.</p>
+
+                                <p>Initial value 50% 50% 0</p>
+                                <p>
+                                    <code>/* x-offset | y-offset | z-offset */ </code>
+                                    <br>
+                                    <code>transform-origin: 2px 30% 10px;</code>
+                                </p>
+                                <p>The keywords are convenience shorthands and match the following &lt;percentage&gt; values:
+                                    <br>Keyword Value: left 0%; center 50%; right 100%; top 0% ;bottom 100%
+                                </p>
+
+                                <h5>Examples</h5>
+                                <p>
+                                    <code>transform: rotate(45deg);</code>
+                                    <br>
+                                    <code>transform-origin: top left;</code>
+                                </p>
+                                <p>
+                                    <code>transform: scale(1.6);</code>
+                                    <br>
+                                    <code>transform-origin: 100% -30%;</code>
+                                </p>
+
+                                <h6>browser support
+                                    <a href="https://caniuse.com/#search=translate" target="_blank">caniuse.com</a>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
-<button class="btn btn-link font-weight-bold" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="btn btn-link font-weight-bold" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Translate syntax
                                 </button>
                             </h5>
@@ -134,8 +186,8 @@
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
-<button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-    aria-controls="collapseTwo">
+                                <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                 aria-controls="collapseTwo">
                                     Scale syntax
                                 </button>
                             </h5>
@@ -171,8 +223,8 @@
                     <div class="card">
                         <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
-<button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-    aria-controls="collapseThree">
+                                <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
                                     Rotate syntax
                                 </button>
                             </h5>
@@ -205,8 +257,8 @@
                     <div class="card">
                         <div class="card-header" id="headingFour">
                             <h5 class="mb-0">
-<button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
-    aria-controls="collapseFour">
+                                <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                    aria-controls="collapseFour">
                                     Skew syntax
                                 </button>
                             </h5>
@@ -242,8 +294,8 @@
                     <div class="card">
                         <div class="card-header" id="headingFive">
                             <h5 class="mb-0">
-<button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
-    aria-controls="collapseFive">
+                                <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                    aria-controls="collapseFive">
                                     Matrix syntax
                                 </button>
                             </h5>
@@ -275,8 +327,8 @@
                                         <div class="card">
                         <div class="card-header" id="headingSeven">
                             <h5 class="mb-0">
-<button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
-    aria-controls="collapseSeven">
+                                <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false"
+                                    aria-controls="collapseSeven">
                                     Composite transforms syntax
                                 </button>
                             </h5>
@@ -288,62 +340,11 @@
                                 </p>
                                 <p>Specifies the transforms to apply to the element. It is a space separated list of transforms, which are applied one after the other, as requested by the composition operation. Composite transforms are effectively applied in order from right to left.
 </p>
-                                <p>
-                                    <code></code>
-                                </p>
-
                                 <h5>Examples</h5>
                                 <p>
                                     <code>transform: skewx(10deg) translatex(150px);</code><br>
                                     <code>transform-origin: bottom left;</code>
                                 </p>
-                                <p>
-                                    <code></code>
-                                </p>
-
-                                <h6>browser support
-                                    <a href="https://caniuse.com/#search=translate" target="_blank">caniuse.com</a>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header" id="headingSix">
-                            <h5 class="mb-0">
-                            <button class="btn btn-link collapsed font-weight-bold" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
-    aria-controls="collapseSix">
-                                    Transform-origin syntax
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
-                            <div class="card-body">
-                                <p>
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin" target="_blank">source MDN</a>
-                                </p>
-                                <p>Specifies the position of the origin. By default it is at the center of the element and can be moved. It is used by several transforms, like rotations, scaling or skewing, that need a specific point as a parameter.</p>
-                                <p>The transform-origin property may be specified using one, two, or three values.</p>
-
-                                <p>Initial value 50% 50% 0</p>
-                                <p>
-                                    <code>/* x-offset | y-offset | z-offset */ </code><br><code>transform-origin: 2px 30% 10px;</code>
-                                </p>
-                                <p>The keywords are convenience shorthands and match the following
-                                    &lt;percentage&gt; values: <br>Keyword Value: left 0%; center 50%; right 100%; top 0% ;bottom 100%
-                                </p>
-
-                                <h5>Examples</h5>
-                                <p>
-                                   <code>transform: rotate(45deg);</code><br>
-                                    <code>transform-origin: top left;</code>
-                                </p>
-                                <p>
-                                    <code>transform: scale(1.6);</code>
-                                    <br>
-                                    <code>transform-origin: 100% -30%;</code>
-                                </p>
-
                                 <h6>browser support
                                     <a href="https://caniuse.com/#search=translate" target="_blank">caniuse.com</a>
                                 </h6>
