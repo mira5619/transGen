@@ -1,7 +1,6 @@
 //TODO
-//1.to make it responsive
 //3.take it out of bootstrap4
-    // -write accordion 
+
 
 window.onload = init;
 
@@ -48,4 +47,3 @@ function init() {
 function reset() {
     location.reload();
 }
-

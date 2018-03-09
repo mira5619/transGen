@@ -1,15 +1,29 @@
 /* * {
     border: 1px solid red;
 } */
+
 html,
 body {
-  font-size: 62.7%;
-  font-family: sans-serif; }
+    font-size: 62.7%;
+    font-family: sans-serif;
+}
 
 h1 {
-  font-weight: lighter;
-  letter-spacing: 4px;
-  font-size: 5rem; }
+    font-weight: lighter;
+    letter-spacing: 4px;
+    font-size: 5rem;
+    border-bottom: 5px solid hsl(211, 100%, 10%);
+    /* background-color: hsl(211, 100%, 50%); */
+}
+
+
+/* a {
+    text-decoration: none !important;
+} */
+
+.first {
+    background-color: rgba(234, 240, 255, .5);
+}
 
 #translate,
 #scale,
@@ -18,9 +32,13 @@ h1 {
 #matrix,
 #mult,
 #orig {
-  border: none;
-  border-radius: none;
-  border-bottom: 1px solid blue; }
+    border: none;
+    border-radius: none;
+    border-bottom: 1px solid transparent;
+    background-color: white;
+    transition: all 1s;
+    color: hsl(211, 100%, 10%);
+}
 
 #translate:focus,
 #scale:focus,
@@ -29,83 +47,158 @@ h1 {
 #matrix:focus,
 #mult:focus,
 #orig:focus {
-  border-bottom: 1px solid rgba(163, 8, 8, 0.863); }
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+}
+
+code {
+    color: #ff8000;
+}
 
 .reset {
-  cursor: pointer; }
+    cursor: pointer;
+    background-color: #ff8000;
+    border: 1px solid;
+    transition: all 1s;
+}
+
+.reset:hover,
+reset:focus {
+    background-color: #e87706;
+    border: 1px solid #ff8000;
+    box-shadow: 0 .3rem .3rem rgba(0, 0, 0, .1);
+}
 
 main {
-  width: 20rem;
-  height: 20rem;
-  border-top: 3px solid black;
-  border-left: 3px solid black;
-  position: relative; }
+    width: 20rem;
+    height: 20rem;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    position: relative;
+}
 
 .rarrow {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  top: -1.1rem;
-  left: 18.6rem; }
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -1.1rem;
+    left: 18.6rem;
+}
 
 .downarrow {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  left: -1.1rem;
-  top: 18.6rem; }
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: -1.1rem;
+    top: 18.6rem;
+}
 
 .x-coordinate {
-  position: absolute;
-  top: 0rem;
-  left: 17rem;
-  font-family: 'Kalam', cursive;
-  font-size: 1.9rem; }
+    position: absolute;
+    top: 0rem;
+    left: 17rem;
+    font-family: 'Kalam', cursive;
+    font-size: 1.9rem;
+}
 
 .y-coordinate {
-  position: absolute;
-  left: 1rem;
-  top: 18rem;
-  font-family: 'Kalam', cursive;
-  font-size: 1.9rem; }
+    position: absolute;
+    left: 1rem;
+    top: 18rem;
+    font-family: 'Kalam', cursive;
+    font-size: 1.9rem;
+}
 
 .movedBox {
-  width: 10rem;
-  height: 10rem;
-  opacity: 0.8;
-  font-family: 'Kalam', cursive; }
+    width: 10rem;
+    height: 10rem;
+    opacity: 0.8;
+    font-family: 'Kalam', cursive;
+}
 
 .middle {
-  background-image: url("../notebook-page.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat; }
+    background-image: url("../notebook-page.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /*position: relative;*/
+}
 
 .resultOrig,
 .resultTransf {
-  font-family: 'Kalam', cursive;
-  font-size: 1.6rem;
-  font-weight: bold;
-  transform: translateY(-60px);
-  animation: result 3s linear 2; }
+    font-family: 'Kalam', cursive;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: hsl(211, 100%, 10%);
+    transform: translateY(-60px);
+    animation: result 3s linear 2s;
+    animation-fill-mode: forwards;
+}
+
+#collapseOne,
+#collapseTwo,
+#collapseThree,
+#collapseFour,
+#collapseFive,
+#collapseSix,
+#collapseSeven {
+    background-color: rgba(234, 240, 255, .3);
+}
+
+#headingOne,
+#headingTwo,
+#headingThree,
+#headingFour,
+#headingFive,
+#headingSix,
+#headingSeven {
+    background-color: hsl(211, 100%, 50%);
+}
+
+.card button {
+    color: white;
+}
+
+.card button:hover,
+.card button:focus {
+    color: hsl(211, 100%, 10%);
+    text-decoration: none;
+}
 
 @keyframes result {
-  0% {
-    /*         transform: scale(1.1); */
-    color: black;
-    font-size: 1.6rem; }
-  25% {
-    /*         transform: scale(1.2); */
-    color: black;
-    font-size: 1.6rem; }
-  50% {
-    /*         transform: scale(1.2); */
-    color: red;
-    font-size: 2.5rem; }
-  75% {
-    /*         transform: scale(1.2); */
-    color: red;
-    font-size: 3rem; }
-  100% {
-    /*         transform: scale(1.); */
-    color: black;
-    font-size: 2rem; } }
+    0% {
+        /* color: black; */
+        font-size: 1.6rem;
+    }
+    100% {
+        /* color: black; */
+        font-size: 3rem;
+    }
+}
+
+
+/*from https://atomiks.github.io/30-seconds-of-css/#hover-underline-animation*/
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    /*color: #0087ca;*/
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
